@@ -22,6 +22,11 @@ A basic string helper library in C, created as a learning exercize to get better
     string_replace(s, "Hello", "Greetings");
 ```
 
+* Print string
+``` c 
+    print_string(s);
+```
+
 * Destroy the instance (free it's memory)
 ``` c 
     destroy_string_helper(s);
