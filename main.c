@@ -125,10 +125,23 @@ void string_replace(string_helper *s, const char *sub_string, const char *replac
     return;
 }
 
-// TODO: Replace all instances of character(s)
+void string_replace_all(string_helper *s, const char *sub_string, const char *replace_string) {
+
+    while(true) {
+        char *p = strstr(s->value, sub_string);
+
+        if(p != NULL) {
+            string_replace(s, sub_string, replace_string);
+        } else {
+            break;
+        }
+    }
+
+    return;
+}
 
 int main() {
-    string_helper *s = create_string_helper("Hello,");
+    string_helper *s = create_string_helper("Hello Hello Hello,");
 
     print_string(s);
     printf("String len: %d\n", (int)strlen(s->value));
@@ -140,6 +153,11 @@ int main() {
     // ===============================================
 
     string_replace(s, "Hello", "Greetings");
+    print_string(s);
+    printf("String len: %d\n", (int)strlen(s->value));
+    // ===============================================
+
+    string_replace_all(s, "Hello", "Greetings");
     print_string(s);
     printf("String len: %d\n", (int)strlen(s->value));
     // ===============================================
