@@ -22,6 +22,10 @@ A basic string helper library in C, created as a learning exercize to get better
     string_replace(s, "Hello", "Greetings");
 ```
 
+* Replace all instances string
+``` c 
+    string_replace_all(s, "Hello", "Greetings");
+
 * Print string
 ``` c 
     print_string(s);
